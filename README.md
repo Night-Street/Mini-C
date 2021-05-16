@@ -18,3 +18,4 @@ MASM使用说明：
 Note：
 在部分电脑上可以会因权限不够而拒绝访问Mini-C.exe。
 Mini-C.exe和productions.dat必须同时放在MASM目录下才能工作。
+如果要查看代码，可以使用vs2017打开sln文件。
