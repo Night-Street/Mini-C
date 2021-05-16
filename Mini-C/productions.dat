@@ -1,0 +1,101 @@
+program -> declaration-list#
+declaration-list -> declaration declaration-list#
+declaration-list -> #
+declaration -> type-specifier ID declaration-feature#
+declaration -> type-specifier ;
+declaration-feature -> variable-feature#
+declaration-feature -> function-feature#
+variable-feature -> ;#
+variable-feature -> [ NUM ] ;#
+function-feature -> ( parameters ) { local-declarations statement-list extra-statement }#
+type-specifier -> int#
+type-specifier -> void#
+type-specifier -> struct-specifier#
+struct-specifier -> struct ID struct-declaration-compound#
+struct-specifier -> ID#
+struct-declaration-compound -> { struct-declaration-list } ;#
+struct-declaration-list -> int ID ; struct-declaration-list#
+struct-declaration-list -> #
+parameters -> parameter-list#
+parameters -> void#
+parameters -> #
+parameter-list -> parameter extra-parameter-list#
+parameter -> type-specifier ID is-array-parameter#
+extra-parameter-list -> , parameter extra-parameter-list#
+extra-parameter-list -> #
+is-array-parameter -> [ ]#
+is-array-parameter -> #
+compound-statement -> { local-declarations statement-list extra-statement }#
+extra-statement -> local-declarations statement-list extra-statement#
+extra-statement -> #
+local-declarations -> type-specifier ID variable-feature local-declarations#
+local-declarations -> #
+statement-list -> statement statement-list#
+statement-list -> #
+statement -> compound-statement#
+statement -> expression-statement#
+statement -> selection-statement#
+statement -> labeled-statement#
+statement -> iteration-statement#
+statement -> jump-statement#
+statement -> case-statement#
+expression-statement -> optional-expression ;#
+optional-expression -> expression#
+optional-expression -> #
+selection-statement -> if-branch else-branch#
+selection-statement -> switch-branch#
+if-branch -> if ( expression ) statement#
+else-branch -> else statement#
+else-branch -> #
+switch-branch -> switch ( conditional-expression ) { case-statement }#
+switch-branch -> switch ( conditional-expression ) { case-statement } ;#
+iteration-statement -> while ( expression ) statement#
+iteration-statement -> for ( optional-expression ; optional-expression ; optional-expression ) statement#
+jump-statement -> return optional-expression ;#
+jump-statement -> break ;#
+jump-statement -> continue ;#
+jump-statement -> goto ID ;#
+labeled-statement -> ID :#
+case-statement -> case NUM : statement#
+case-statement -> default : statement#
+expression -> assignment-expression#
+expression -> conditional-expression#
+assignment-expression -> variable ass-operator conditional-expression#
+variable -> ID is-array is-field#
+is-array -> [ conditional-expression ]#
+is-array -> #
+is-field -> . ID#
+is-field -> #
+ass-operator -> =#
+ass-operator -> +=#
+ass-operator -> -=#
+ass-operator -> *=#
+ass-operator -> /=#
+ass-operator -> %=#
+conditional-expression -> additive-expression extra-additive-expression#
+extra-additive-expression -> relation-operator additive-expression#
+extra-additive-expression -> #
+relation-operator -> <=#
+relation-operator -> <#
+relation-operator -> >#
+relation-operator -> >=#
+relation-operator -> !=#
+relation-operator -> ==#
+additive-expression -> multiplicative-expression add-operator multiplicative-expression#
+add-operator -> +#
+add-operator -> -#
+multiplicative-expression -> primary-expression mul-operator primary-expression#
+mul-operator -> *#
+mul-operator -> /#
+mul-operator -> %#
+primary-expression -> variable#
+primary-expression -> NUM#
+primary-expression -> ( expression )#
+primary-expression -> call-function#
+primary-expression -> - primary-expression#
+call-function -> ID ( arguments )#
+arguments -> argument-list#
+arguments -> #
+argument-list -> expression extra-argument-list#
+extra-argument-list -> , expression extra-argument-list#
+extra-argument-list -> #

@@ -1,0 +1,27 @@
+struct Student{
+	int id;
+	int age;
+};
+Student s[10];
+Student createStudent(int id, int age){
+	Student ret;
+	ret.id=id;
+	ret.age=age;
+	return ret;
+}
+Student copyStudent(Student t){
+	return t;
+}
+Student getSecond(Student t[]){
+	return t[1];
+}
+void main(){
+	s[1].id = 170801101;
+	s[1].age = 22;
+	s[1]=createStudent(s[1].id, s[1].age);
+	s[1]=copyStudent(s[1]);
+	s[1]=getSecond(s);
+	printInt(s[1].id);
+	printSpace();
+	printInt(s[1].age);
+}
