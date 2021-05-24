@@ -43,6 +43,9 @@
     <None Include="productions.dat">
       <Filter>资源文件</Filter>
     </None>
+    <None Include="scanner-input.asm">
+      <Filter>资源文件</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Text Include="结构体测试.txt">

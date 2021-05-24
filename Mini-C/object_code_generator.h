@@ -351,7 +351,7 @@ namespace object_code_generator {
 				int offset;
 				for (int i = 0; i < symbolTable[subScope].size(); i++) {
 					if (symbolTable[subScope][i]->name == field) {
-						offset = 4 * (i + 1);
+						offset = 4 * i;
 						break;
 					}
 				}
@@ -374,7 +374,7 @@ namespace object_code_generator {
 				int offset;
 				for (int i = 0; i < symbolTable[subScope].size(); i++) {
 					if (symbolTable[subScope][i]->name == field) {
-						offset = 4 * (i + 1);
+						offset = 4 * i;
 						break;
 					}
 				}

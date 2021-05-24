@@ -18,10 +18,23 @@ Student getSecond(Student t[]){
 void main(){
 	s[1].id = 170801101;
 	s[1].age = 22;
+	printInt(s[1].id);
+	printSpace();
+	printInt(s[1].age);
+	printLn();
 	s[1]=createStudent(s[1].id, s[1].age);
+	printInt(s[1].id);
+	printSpace();
+	printInt(s[1].age);
+	printLn();
 	s[1]=copyStudent(s[1]);
+	printInt(s[1].id);
+	printSpace();
+	printInt(s[1].age);
+	printLn();
 	s[1]=getSecond(s);
 	printInt(s[1].id);
 	printSpace();
 	printInt(s[1].age);
+	printLn();
 }

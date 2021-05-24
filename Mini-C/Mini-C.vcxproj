@@ -163,6 +163,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="productions.dat" />
+    <None Include="scanner-input.asm" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="scanner-input.txt" />
