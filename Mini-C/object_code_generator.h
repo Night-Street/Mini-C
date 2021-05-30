@@ -1,5 +1,8 @@
 #pragma once
 #include "quadruples.h"
+#include "symbol_table.h"
+using namespace symbol_table_space;
+using namespace quadruple_space;
 #define MASMFunction MASMProcedure
 namespace object_code_generator {
 	auto curIt = threeAddrCodes.begin();
